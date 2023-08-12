@@ -12,14 +12,11 @@ In the **Scripts** pain, change the script to JavaScript - No Libraries
 
 Paste the below JavaScript:
 ---
-`var arr = document.getElementsByTagName("style")
-
+```javascript
+var arr = document.getElementsByTagName("style")
 for (var i = 0; i < arr.length; i++) {
-
   if (arr[i].type == 'text/css') arr[i].setAttribute('type', 'text/less')
-  
 }
-
 less.env = 'development'
-
-less.refreshStyles()`
+less.refreshStyles()
+```

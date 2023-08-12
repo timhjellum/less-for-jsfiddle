@@ -21,5 +21,5 @@ less.env = 'development'
 less.refreshStyles()
 ```
 ---
-See it in action: [https://jsfiddle.net/timhjellum/m0r13wfc/41/](https://jsfiddle.net/timhjellum/m0r13wfc/41/).
+See it in action: [https://jsfiddle.net/timhjellum/m0r13wfc/41/](https://jsfiddle.net/timhjellum/m0r13wfc/).
 

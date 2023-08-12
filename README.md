@@ -6,9 +6,9 @@ On JSFiddle, add a **Resources**.
 
 Link to the LESS CDN: `https://cdnjs.cloudflare.com/ajax/libs/less.js/1.6.3/less.min.js`.
 
-In the **Styles** pain, change the style sheet language to **SCSS**.
+In the **Styles** pane, change the style sheet language to **SCSS**.
 
-In the **Scripts** pain, change the script to JavaScript - No Libraries
+In the **Scripts** pane, change the script to JavaScript - No Libraries
 
 Paste the below JavaScript:
 ---
@@ -21,5 +21,5 @@ less.env = 'development'
 less.refreshStyles()
 ```
 ---
-See it in action: [https://jsfiddle.net/timhjellum/m0r13wfc/41/](https://jsfiddle.net/timhjellum/m0r13wfc/41/)
+See it in action: [https://jsfiddle.net/timhjellum/m0r13wfc/41/](https://jsfiddle.net/timhjellum/m0r13wfc/41/).
 

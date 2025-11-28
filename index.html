@@ -1,0 +1,138 @@
+---
+layout: default
+title: USWDS Tutorial
+---
+<script src="/assets/uswds/components/usa-banner.js.mjs" type="module"></script>
+<usa-banner></usa-banner>
+<div class="usa-overlay"></div>
+<header class="usa-header usa-header--basic">
+    <div class="usa-nav-container">
+        <div class="usa-navbar">
+            <div class="usa-logo">
+                <em class="usa-logo__text"><a href="/" title="<Project title>">&lt;Project title&gt;</a></em>
+            </div>
+            <button type="button" class="usa-menu-btn">Menu</button>
+        </div>
+        <nav aria-label="Primary navigation" class="usa-nav">
+            <button type="button" class="usa-nav__close">
+                <img src="/assets/uswds/img/usa-icons/close.svg" role="img" alt="Close" />
+            </button>
+            <ul class="usa-nav__primary usa-accordion">
+                <li class="usa-nav__primary-item">
+                    <button type="button" class="usa-accordion__button usa-nav__link usa-current" aria-expanded="false" aria-controls="basic-nav-section-one">
+                        <span>&lt;Current section&gt;</span>
+                    </button>
+                    <ul id="basic-nav-section-one" class="usa-nav__submenu">
+                        <li class="usa-nav__submenu-item">
+                            <a href="javascript:void(0);"><span>&lt;Navigation link&gt;</span></a>
+                        </li>
+                        <li class="usa-nav__submenu-item">
+                            <a href="javascript:void(0);"><span>&lt;Navigation link&gt;</span></a>
+                        </li>
+                        <li class="usa-nav__submenu-item">
+                            <a href="javascript:void(0);"><span>&lt;Navigation link&gt;</span></a>
+                        </li>
+                        <li class="usa-nav__submenu-item">
+                            <a href="javascript:void(0);"><span>&lt;Navigation link&gt;</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="usa-nav__primary-item">
+                    <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="basic-nav-section-two">
+                        <span>&lt;Section&gt;</span>
+                    </button>
+                    <ul id="basic-nav-section-two" class="usa-nav__submenu">
+                        <li class="usa-nav__submenu-item">
+                            <a href="javascript:void(0);"><span>&lt;Navigation link&gt;</span></a>
+                        </li>
+                        <li class="usa-nav__submenu-item">
+                            <a href="javascript:void(0);"><span>&lt;Navigation link&gt;</span></a>
+                        </li>
+                        <li class="usa-nav__submenu-item">
+                            <a href="javascript:void(0);"><span>&lt;Navigation link&gt;</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="usa-nav__primary-item">
+                    <a href="javascript:void(0);" class="usa-nav-link"><span>&lt;Simple link&gt;</span></a>
+                </li>
+            </ul>
+            <section aria-label="Search component">
+                <form class="usa-search usa-search--small" role="search">
+                    <label class="usa-sr-only" for="search-field">Search</label>
+                    <input class="usa-input" id="search-field" type="search" name="search" />
+                    <button class="usa-button" type="submit">
+                        <img src="/assets/uswds/img/usa-icons-bg/search--white.svg" class="usa-search__submit-icon" alt="Search" />
+                    </button>
+                </form>
+            </section>
+        </nav>
+    </div>
+</header>
+<main id="tutorial-start">
+<div class="grid-row">
+  <div class="grid-col-12">grid-col-12</div>
+</div>
+<div class="grid-row">
+  <div class="grid-col-12">grid-col-12</div>
+</div>
+<div class="grid-row">
+  <div class="grid-col-12">grid-col-12</div>
+</div>
+<div class="grid-row">
+  <div class="grid-col-12">grid-col-12</div>
+</div>
+</main>
+{% include "site/footer.html" %}
+<div class="usa-identifier">
+    <section class="usa-identifier__section usa-identifier__section--masthead" aria-label="Agency identifier,,,">
+        <div class="usa-identifier__container">
+            <div class="usa-identifier__logos">
+                <a href="javascript:void(0)" class="usa-identifier__logo"><img class="usa-identifier__logo-img" src="/assets/uswds/img/circle-gray-20.svg" alt="&lt;Department of Energy&gt; logo" role="img" /> </a><a href="javascript:void(0);" class="usa-identifier__logo"><img class="usa-identifier__logo-img" src="/assets/uswds/img/circle-gray-20.svg" alt="&lt;U.S. Energy Information Administration&gt; logo" role="img" /></a>
+            </div>
+            <section class="usa-identifier__identity" aria-label="Agency description,,,">
+                <p class="usa-identifier__identity-domain">domain.gov</p>
+                <p class="usa-identifier__identity-disclaimer">
+                    <span aria-hidden="true">An </span>official website of the
+                    <a href="">&lt;Parent agency&gt;</a> and the
+                    <a href="javascript:void(0)">&lt;Other agency&gt;</a>
+                </p>
+            </section>
+        </div>
+    </section>
+    <nav class="usa-identifier__section usa-identifier__section--required-links" aria-label="Important links,,,">
+        <div class="usa-identifier__container">
+            <ul class="usa-identifier__required-links-list">
+                <li class="usa-identifier__required-links-item">
+                    <a href="javascript:void(0)" class="usa-identifier__required-link usa-link">About &lt;Parent shortname&gt;</a>
+                </li>
+                <li class="usa-identifier__required-links-item">
+                    <a href="" class="usa-identifier__required-link usa-link">Accessibility statement</a>
+                </li>
+                <li class="usa-identifier__required-links-item">
+                    <a href="" class="usa-identifier__required-link usa-link">FOIA requests</a>
+                </li>
+                <li class="usa-identifier__required-links-item">
+                    <a href="" class="usa-identifier__required-link usa-link">No FEAR Act data</a>
+                </li>
+                <li class="usa-identifier__required-links-item">
+                    <a href="" class="usa-identifier__required-link usa-link">Office of the Inspector General</a>
+                </li>
+                <li class="usa-identifier__required-links-item">
+                    <a href="" class="usa-identifier__required-link usa-link">Performance reports</a>
+                </li>
+                <li class="usa-identifier__required-links-item">
+                    <a href="" class="usa-identifier__required-link usa-link">Privacy policy</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section class="usa-identifier__section usa-identifier__section--usagov" aria-label="U.S. government information and services,,,">
+        <div class="usa-identifier__container">
+            <div class="usa-identifier__usagov-description">
+                Looking for U.S. government information and services?
+            </div>
+            <a href="https://www.usa.gov/" class="usa-link">Visit USA.gov</a>
+        </div>
+    </section>
+</div>

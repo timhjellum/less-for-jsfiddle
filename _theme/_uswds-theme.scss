@@ -1,0 +1,23 @@
+/*
+----------------------------------------
+USWDS with settings overrides
+----------------------------------------
+Uncomment the following lines and add a list of changed settings
+in the form $setting: value,
+----------------------------------------
+*/
+
+
+  @use "uswds-core" with (
+    $setting: value,
+    $setting: value,
+	$theme-show-notifications: false,
+	$theme-font-type-sans: "system",
+	$theme-font-type-sans: "public-sans",
+	$theme-font-weight-heavy: 900,
+	$theme-banner-background-color: "ink",
+  $theme-banner-link-color: "indigo-30",
+  $theme-banner-max-width: none,
+  $theme-identifier-max-width: none,
+  );
+

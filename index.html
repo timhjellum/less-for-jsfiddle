@@ -10,27 +10,42 @@
     <link rel="manifest" href="./site.webmanifest">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
-    <title>skifree</title>
+    <title>Timber Canyon</title>
 </head>
 
 <body>
-    <div id="gameContainer">
-        <canvas id="ski"></canvas>
-        <div id="hud">
-            <div id="scoreDisplay">Score: 0</div>
-            <div id="distDisplay">Distance: 0m</div>
-        </div>
-        <div id="lives"></div>
-        <button id="speedBtn">⚡ Fast</button>
-        <div id="overlay">
-            <h2>⛷ SkiFree</h2>
-            <div class="sub">Choose your character</div>
-            <div class="char-grid" id="charGrid"></div>
-            <p class="tip">Mouse or arrow keys · Dodge obstacles · Collect flags · Survive the yeti!</p>
-            <button id="startBtn" onclick="startGame()">LETS GO!!!</button>
-        </div>
+<div id="gameContainer">
+  <canvas id="ski"></canvas>
+  <div id="hud">
+    <div id="levelDisplay">Ski Free</div>
+    <div id="scoreDisplay">Score: 0</div>
+    <div id="distDisplay">Distance: 0m</div>
+    <div id="highScoreDisplay">Best: 0</div>
+  </div>
+  <div id="lives"></div>
+  <div id="controls">
+    <button id="cursorBtn">👁 Show Cursor</button>
+    <button id="speedBtn">🐌 Normal</button>
+  </div>
+  <div id="levelBanner"><h3 id="bannerTitle"></h3><p id="bannerSub"></p></div>
+  <div id="progressBar">
+    <div class="label"><span id="progLabel">Next level</span><span id="progVal">0 / 1000</span></div>
+    <div class="track"><div class="fill" id="progFill" style="width:0%"></div></div>
+  </div>
+  <div id="overlay">
+    <h2>⛷ SkiFree</h2>
+    <div class="sub">Choose your character</div>
+    <div class="highscore-banner" id="titleHighScore"></div>
+    <div class="gender-select">
+      <label><input type="radio" name="gender" value="dude" checked> Dude</label>
+      <label><input type="radio" name="gender" value="dudette"> Dude-ette</label>
     </div>
-
+    <div class="char-grid" id="charGrid"></div>
+    <div id="levelList"></div>
+    <p class="tip">Mouse or arrow keys &middot; Reach 1000 pts or 2000m to advance!</p>
+    <button id="startBtn" onclick="startGame()">Ski!</button>
+  </div>
+</div>
 </body>
 
 </html>

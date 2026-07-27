@@ -7,3 +7,53 @@ background-repeat: no-repeat;
 	height: 93px;
 	aspect-ratio: ~"300 / 93";
 }
+
+
+
+
+@media screen and (min-width: 320px) {
+	.char-grid {
+	    display: grid;
+	    grid-template-columns: repeat(3, 1fr);
+	}
+}
+@media screen and (min-width: 1040px) {
+	.char-grid {
+	    grid-template-columns: repeat(6, 1fr);
+		width: 100%;
+		max-width: 1040px;
+	}
+}
+
+.char-card {
+	overflow: clip;
+	
+	&:not(:hover) {
+		.char-photo {
+		animation: scaleOut 2s forwards ease-in-out;
+			transform-origin: center top;
+		}
+	}
+	&:hover {
+		.char-photo {
+			animation: scaleIn 2s forwards ease-in-out;
+			transform-origin: center top;
+		}
+	}
+}
+@keyframes scaleIn {
+	from {
+		transform: scale(1)
+	}
+	to {
+transform: scale(1.5)
+	}
+}
+@keyframes scaleOut {
+	from {
+		transform: scale(1.5)
+	}
+	to {
+transform: scale(1)
+	}
+}

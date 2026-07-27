@@ -31,11 +31,6 @@
   font-family: "VT323", serif !important;
   font-size: 1rem !important;
 }
-canvas {
-  display: block;
-  cursor: none;
-  image-rendering: pixelated;
-}
 #gameContainer {
   position: relative;
   width: 100vw;
@@ -49,9 +44,15 @@ canvas {
   font-size: 14px;
   font-weight: 500;
   pointer-events: none;
+  line-height: 1.7;
 }
-#hud div {
-  margin-bottom: 4px;
+#hud #highScoreDisplay {
+  color: #cc8800;
+}
+#hud #levelDisplay {
+  color: #1a6aaa;
+  font-weight: 700;
+  font-size: 15px;
 }
 #lives {
   position: absolute;
@@ -62,10 +63,14 @@ canvas {
   pointer-events: none;
   letter-spacing: 4px;
 }
-#speedBtn {
+#controls {
   position: absolute;
   top: 10px;
   right: 10px;
+  display: flex;
+  gap: 8px;
+}
+#controls button {
   padding: 6px 14px;
   background: rgba(255, 255, 255, 0.7);
   border: 1px solid #aac;
@@ -73,6 +78,62 @@ canvas {
   font-size: 13px;
   cursor: pointer;
   color: #1a3a5c;
+  font-family: sans-serif;
+}
+#levelBanner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: linear-gradient(135deg, #1a3a5c, #1a6aaa);
+  color: white;
+  padding: 20px 40px;
+  border-radius: 16px;
+  text-align: center;
+  pointer-events: none;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 10;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+#levelBanner.show {
+  transform: translate(-50%, -50%) scale(1);
+}
+#levelBanner h3 {
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+#levelBanner p {
+  font-size: 14px;
+  opacity: 0.85;
+}
+#progressBar {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 260px;
+  pointer-events: none;
+}
+#progressBar .label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #1a3a5c;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+#progressBar .track {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  height: 8px;
+  overflow: hidden;
+  border: 1px solid #aac;
+}
+#progressBar .fill {
+  height: 100%;
+  background: linear-gradient(90deg, #1a6aaa, #44aaff);
+  border-radius: 8px;
+  transition: width 0.2s;
 }
 #overlay {
   position: absolute;
@@ -90,18 +151,25 @@ canvas {
 #overlay h2 {
   font-size: 26px;
   font-weight: 700;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 #overlay .sub {
   font-size: 14px;
   color: #3a6a8c;
-  margin-bottom: 18px;
+  margin-bottom: 4px;
+}
+#overlay .highscore-banner {
+  font-size: 13px;
+  color: #cc8800;
+  font-weight: 600;
+  margin-bottom: 14px;
+  min-height: 18px;
 }
 .char-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   max-width: 520px;
   width: 100%;
 }
@@ -130,6 +198,13 @@ canvas {
 .char-card canvas {
   image-rendering: pixelated;
 }
+.char-photo {
+  width: 100%;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
 .char-name {
   font-size: 13px;
   font-weight: 600;
@@ -139,10 +214,49 @@ canvas {
   font-size: 11px;
   color: #5a8aac;
 }
+#startBtn {
+  padding: 12px 36px;
+  background: #1a6aaa;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: sans-serif;
+}
+#startBtn:hover {
+  background: #155a90;
+}
 #overlay p.tip {
   font-size: 13px;
   color: #3a6a8c;
   margin-bottom: 10px;
+}
+#levelList {
+  font-size: 11px;
+  color: #5a8aac;
+  margin-bottom: 12px;
+  max-width: 480px;
+  line-height: 1.6;
+}
+.gender-select {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 14px;
+  font-size: 14px;
+  color: #1a3a5c;
+  font-weight: 500;
+}
+.gender-select label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+.gender-select input {
+  cursor: pointer;
+  accent-color: #1a6aaa;
 }
 @layer hotdog {
   .hotdog-container {
@@ -279,6 +393,46 @@ h2 {
   max-width: 300px;
   height: 93px;
   aspect-ratio: 300 / 93;
+}
+@media screen and (min-width: 320px) {
+  .char-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 1040px) {
+  .char-grid {
+    grid-template-columns: repeat(6, 1fr);
+    width: 100%;
+    max-width: 1040px;
+  }
+}
+.char-card {
+  overflow: clip;
+}
+.char-card:not(:hover) .char-photo {
+  animation: scaleOut 2s forwards ease-in-out;
+  transform-origin: center top;
+}
+.char-card:hover .char-photo {
+  animation: scaleIn 2s forwards ease-in-out;
+  transform-origin: center top;
+}
+@keyframes scaleIn {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.5);
+  }
+}
+@keyframes scaleOut {
+  from {
+    transform: scale(1.5);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 :root {
   --color-01: #000;

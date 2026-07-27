@@ -1,18 +1,22 @@
 @layer base, scoreboard, hotdog, start-button;
 @layer base {
+  /*
   body ::-webkit-scrollbar,
   body::-webkit-scrollbar {
     display: none;
   }
+
   body {
     -ms-overflow-style: none;
     overflow: hidden;
     background: #ddeef8;
     font-family: sans-serif;
   }
+
   html {
     scrollbar-width: none;
   }
+*/
   *,
   *::before,
   *::after {
@@ -27,9 +31,8 @@
     position: relative;
   }
 }
-#overlay p {
-  font-family: "VT323", serif !important;
-  font-size: 1rem !important;
+body {
+  background-color: #001030;
 }
 #gameContainer {
   position: relative;
@@ -258,112 +261,6 @@
   cursor: pointer;
   accent-color: #1a6aaa;
 }
-@layer hotdog {
-  .hotdog-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(255, 255, 255, 0.5);
-    place-content: center;
-  }
-  .hotdog-container[data-visibility="show"] {
-    animation: show 0.25s ease-in forwards;
-  }
-  .hotdog-container[data-visibility="hide"] {
-    animation: hide 0.25s ease-out forwards;
-  }
-  .hotdog-container .ski-free {
-    width: 90vw;
-    height: 90vh;
-  }
-  .hotdog-container .ski-free > * {
-    border: 5px blue;
-  }
-  .hotdog-container .ski-free--hot-dogger {
-    aspect-ratio: 1;
-    padding: 0;
-    display: grid;
-    width: 100%;
-    grid-template-columns: repeat(63, 1.58730159%);
-    grid-template-rows: repeat(63, 1.58730159%);
-  }
-  .hotdog-container .ski-free--hot-dogger span {
-    height: 100%;
-    width: 100%;
-    font-size: 0;
-    text-align: center;
-    display: block;
-  }
-  .hotdog-container .ski-free--hot-dogger .border {
-    background-color: #000;
-  }
-  .hotdog-container .ski-free--hot-dogger .gator,
-  .hotdog-container .ski-free--hot-dogger .pom-pom {
-    background-color: #00f;
-  }
-  .hotdog-container .ski-free--hot-dogger .hat {
-    background-color: #f00;
-  }
-  .hotdog-container .ski-free--hot-dogger .face-color {
-    background-color: #eee;
-  }
-  .hotdog-container .ski-free--hot-dogger .face-color-shadow {
-    background-color: #ccc;
-  }
-  .hotdog-container .ski-free--hot-dogger .sweater {
-    background-color: #f0f;
-  }
-  .hotdog-container .ski-free--hot-dogger .lenses {
-    background-color: #0f3;
-  }
-  .hotdog-container .ski-free--hot-dogger .lense-reflection {
-    background-color: #3f3;
-  }
-  .hotdog-container .ski-free--hot-dogger .lense-reflection-lighter {
-    background-color: #6f3;
-  }
-  .hotdog-container .ski-free--hot-dogger .lense-reflection-lighest {
-    background-color: #9f3;
-  }
-  .hotdog-container .ski-free--hot-dogger .ski {
-    background-color: #0ff;
-  }
-  .hotdog-container .ski-free--hot-dogger .ski-red {
-    background-color: red;
-  }
-  .hotdog-container .ski-free--hot-dogger .ski-white {
-    background-color: white;
-  }
-  .hotdog-container .ski-free--hot-dogger .ski-blue {
-    background-color: blue;
-  }
-  .hotdog-container .ski-free--hot-dogger .ski-letters {
-    background-color: #000;
-  }
-  .hotdog-container .ski-free--hot-dogger .strap-dark {
-    background-color: #333;
-  }
-  .hotdog-container .ski-free--hot-dogger .strap-light {
-    background-color: #666;
-  }
-  .hotdog-container .ski-free--hot-dogger .delete {
-    background-color: transparent;
-  }
-  .hotdog-container p {
-    font-family: var(--font-family);
-    font-style: normal;
-    font-size: 1rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #333;
-  }
-}
 @layer start-button {
   #startBtn {
     background: rgba(255, 255, 255, 0.7);
@@ -386,13 +283,34 @@
   }
 }
 h2 {
-  background-image: url('data:image/svg+xml,<svg width="100%" height="100%" viewBox="0 0 2275 704" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g id="free"><path d="M1750,250l-50,0l0,50l75,0l0,-25l25,0l0,-75l-25,0l0,-25l-125,0l0,25l-25,0l0,25l-25,0l0,25l-25,0l0,50l-25,0l0,50l-25,0l0,75l-25,0l0,25l-150,0l0,25l-50,0l0,25l150,0l0,75l-25,0l0,25l-25,0l0,25l-25,0l0,25l-125,0l0,-25l-25,0l0,-25l50,0l0,25l50,0l0,-25l-25,0l0,-25l-25,0l0,-25l-75,0l0,25l-25,0l0,75l25,0l0,25l50,0l0,25l125,0l0,-25l25,0l0,-25l25,0l0,-25l25,0l0,-25l25,0l0,-25l25,0l0,-50l25,0l0,-25l100,0l0,-25l50,0l0,-25l-100,0l0,-100l25,0l0,-50l25,0l0,-25l25,0l0,-25l25,0l0,-25l75,0l0,25Z" style="fill:%23bfc200;"></path><path d="M1775,350l-25,0l0,25l-50,0l0,25l-50,0l0,25l75,0l0,25l-25,0l0,50l-25,0l0,25l-25,0l0,25l-50,0l0,25l100,0l0,-25l25,0l0,-25l25,0l0,-50l25,0l0,-25l50,0l0,50l25,0l0,-25l25,0l0,-50l-25,0l0,-25l-75,0l0,-50Z" style="fill:%23bfc200;"></path><g><path d="M2050,375l-75,0l0,25l-25,0l0,25l-25,0l0,50l-25,0l0,50l-25,0l0,50l25,0l0,25l100,0l0,-25l25,0l0,-25l25,0l0,-25l-50,0l0,25l-75,0l0,-25l25,0l0,-25l100,0l0,-25l25,0l0,-75l-25,0l0,-25Z" style="fill:%23bfc200;"></path><rect x="1975" y="425" width="75" height="25" style="fill:%23fff;"></rect></g><g><path d="M2250,375l-75,0l0,25l-25,0l0,25l-25,0l0,50l-25,0l0,50l-25,0l0,50l25,0l0,25l100,0l0,-25l25,0l0,-25l25,0l0,-25l-50,0l0,25l-75,0l0,-25l25,0l0,-25l100,0l0,-25l25,0l0,-75l-25,0l0,-25Z" style="fill:%23c2c403;"></path><rect x="2175" y="425" width="75" height="25" style="fill:%23fff;"></rect></g></g><g><path d="M625,75l-50,0l0,25l-25,0l0,-25l-175,0l0,25l-75,0l0,25l-25,0l0,25l-25,0l0,25l-25,0l0,25l-25,0l0,125l25,0l0,25l25,0l0,25l25,0l0,25l25,0l0,25l25,0l0,75l-25,0l0,50l-25,0l0,25l-25,0l0,25l-100,0l0,-25l-25,0l0,-50l-25,0l0,-25l25,0l0,-25l-50,0l0,25l-25,0l0,50l-25,0l0,50l-25,0l0,25l50,0l0,-25l25,0l0,25l200,0l0,-25l75,0l0,-25l25,0l0,-25l25,0l0,-25l25,0l0,-25l25,0l0,-50l25,0l0,-25l-25,0l0,-25l25,0l0,-25l-25,0l0,-25l-25,0l0,-25l-25,0l0,-25l-25,0l0,-25l-50,0l0,-75l25,0l0,-50l25,0l0,-25l25,0l0,-25l75,0l0,25l50,0l0,75l50,0l0,-50l25,0l0,-50l25,0l0,-25Z" style="fill:%2301fe02;"></path><path d="M650,100l-50,0l0,25l-25,0l0,-25l-175,0l0,25l-75,0l0,25l-25,0l0,25l-25,0l0,25l-25,0l0,25l-25,0l0,125l25,0l0,25l25,0l0,25l25,0l0,25l25,0l0,25l25,0l0,75l-25,0l0,50l-25,0l0,25l-25,0l0,25l-100,0l0,-25l-25,0l0,-50l-25,0l0,-25l25,0l0,-25l-50,0l0,25l-25,0l0,50l-25,0l0,50l-25,0l0,25l50,0l0,-25l25,0l0,25l200,0l0,-25l75,0l0,-25l25,0l0,-25l25,0l0,-25l25,0l0,-25l25,0l0,-50l25,0l0,-25l-25,0l0,-25l25,0l0,-25l-25,0l0,-25l-25,0l0,-25l-25,0l0,-25l-25,0l0,-25l-50,0l0,-75l25,0l0,-50l25,0l0,-25l25,0l0,-25l75,0l0,25l50,0l0,75l50,0l0,-50l25,0l0,-50l25,0l0,-25Z" style="fill:%230000fe;"></path><path d="M875,50l-75,0l0,25l-25,0l0,25l-75,0l0,25l50,0l0,25l-25,0l0,50l-25,0l0,50l-25,0l0,50l-25,0l0,50l-25,0l0,50l-25,0l0,50l-25,0l0,50l-25,0l0,50l-25,0l0,25l-25,0l0,25l-50,0l0,25l200,0l0,-50l-25,0l0,-25l25,0l0,-50l25,0l0,-25l25,0l0,50l25,0l0,50l25,0l0,25l-75,0l0,25l175,0l0,-50l-25,0l0,-50l-25,0l0,-50l-25,0l0,-50l-25,0l0,-50l25,0l0,-25l50,0l0,-25l25,0l0,-25l50,0l0,-25l50,0l0,-25l-125,0l0,25l25,0l0,25l-50,0l0,25l-25,0l0,25l-25,0l0,-50l25,0l0,-50l25,0l0,-50l25,0l0,-50l25,0l0,-50l25,0l0,-50Z" style="fill:%2301fe02;"></path><path d="M900,75l-75,0l0,25l-25,0l0,25l-75,0l0,25l50,0l0,25l-25,0l0,50l-25,0l0,50l-25,0l0,50l-25,0l0,50l-25,0l0,50l-25,0l0,50l-25,0l0,50l-25,0l0,50l-25,0l0,25l-25,0l0,25l-50,0l0,25l200,0l0,-50l-25,0l0,-25l25,0l0,-50l25,0l0,-25l25,0l0,50l25,0l0,50l25,0l0,25l-75,0l0,25l175,0l0,-50l-25,0l0,-50l-25,0l0,-50l-25,0l0,-50l-25,0l0,-50l25,0l0,-25l50,0l0,-25l25,0l0,-25l50,0l0,-25l50,0l0,-25l-125,0l0,25l25,0l0,25l-50,0l0,25l-25,0l0,25l-25,0l0,-50l25,0l0,-50l25,0l0,-50l25,0l0,-50l25,0l0,-50l25,0l0,-50Z" style="fill:%230000fe;"></path><path d="M1275,50l-50,0l0,25l-25,0l0,25l-25,0l0,25l25,0l0,25l50,0l0,-25l25,0l0,-25l25,0l0,-25l-25,0l0,-25Z" style="fill:%2301fe02;"></path><path d="M1200,250l-50,0l0,25l-50,0l0,25l-75,0l0,25l50,0l0,25l-25,0l0,50l-25,0l0,50l-25,0l0,50l-25,0l0,50l-25,0l0,25l-25,0l0,25l-50,0l0,25l200,0l0,-50l-25,0l0,-25l25,0l0,-50l25,0l0,-50l25,0l0,-50l25,0l0,-50l25,0l0,-50l25,0l0,-50Z" style="fill:%2301fe02;"></path><path d="M1225,275l-50,0l0,25l-50,0l0,25l-75,0l0,25l50,0l0,25l-25,0l0,50l-25,0l0,50l-25,0l0,50l-25,0l0,50l-25,0l0,25l-25,0l0,25l-50,0l0,25l200,0l0,-50l-25,0l0,-25l25,0l0,-50l25,0l0,-50l25,0l0,-50l25,0l0,-50l25,0l0,-50l25,0l0,-50Z" style="fill:%230000fe;"></path><path d="M1300,75l-50,0l0,25l-25,0l0,25l-25,0l0,25l25,0l0,25l50,0l0,-25l25,0l0,-25l25,0l0,-25l-25,0l0,-25Z" style="fill:%230000fe;"></path></g><g id="dog"><path d="M2025,0l-50,0l0,50l25,0l0,25l25,0l0,50l-25,0l0,25l-25,0l0,25l-50,0l0,25l-50,0l0,-75l25,0l0,25l-50,0l0,75l25,0l0,50l-25,0l0,50l25,0l0,25l125,0l0,-50l25,0l0,25l25,0l0,25l50,0l0,-25l50,0l0,-50l-25,0l0,-25l-25,0l0,-75l75,0l0,-25l25,0l0,-50l-25,0l0,-25l-25,0l0,-67.188l-50,0.001l0,17.187l-75,0l0,-25Z"></path><path d="M2175,150l0,-50l-25,0l0,-25l-25,0l0,-25l-75,0l0,75l50,0l0,25l75,0Z" style="fill:%23828282;"></path><rect x="1975" y="275" width="25" height="25" style="fill:%23828282;"></rect><path d="M2075,250l0,25l25,0l0,25l25,0l0,-25l-25,0l0,-25l-25,0Z" style="fill:%23828282;"></path><path d="M2075,175l-25,0l0,-25l-50,0l0,25l-25,0l0,25l-50,0l0,25l-25,0l0,50l-25,0l0,50l100,0l0,-25l-50,0l0,-25l50,0l0,-50l25,0l0,50l25,0l0,25l25,0l0,25l25,0l0,-50l-25,0l0,-25l25,0l0,-75Z" style="fill:%23828282;"></path><rect x="2000" y="25" width="25" height="25" style="fill:%23828282;"></rect><rect x="2125" y="150" width="25" height="75" style="fill:%23bc0306;"></rect><rect x="2128.12" y="153.125" width="18.75" height="68.75" style="fill:%23c20808;"></rect><rect x="2131.25" y="156.25" width="12.5" height="62.5" style="fill:%23cf0402;"></rect><rect x="2075" y="75" width="25" height="25" style="fill:url(%23_Radial1);"></rect><rect x="2125" y="75" width="25" height="25" style="fill:url(%23_Radial2);"></rect><rect x="2150" y="100" width="25" height="25" style="fill:url(%23_Radial3);"></rect></g><defs><radialGradient id="_Radial1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(2.29621e-15,37.5,-37.5,2.29621e-15,2087.5,87.5)"><stop offset="0" style="stop-color:%230504bd;stop-opacity:1"></stop><stop offset="1" style="stop-color:%23000;stop-opacity:1"></stop></radialGradient><radialGradient id="_Radial2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(2.29621e-15,37.5,-37.5,2.29621e-15,2137.5,87.5)"><stop offset="0" style="stop-color:%230504bd;stop-opacity:1"></stop><stop offset="1" style="stop-color:%23000;stop-opacity:1"></stop></radialGradient><radialGradient id="_Radial3" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(2.29621e-15,37.5,-37.5,2.29621e-15,2162.5,112.5)"><stop offset="0" style="stop-color:%23fc01fc;stop-opacity:1"></stop><stop offset="0.45" style="stop-color:%23b301b3;stop-opacity:1"></stop><stop offset="1" style="stop-color:%23000;stop-opacity:1"></stop></radialGradient></defs></svg>');
-  background-repeat: no-repeat;
+  margin: 0;
   text-indent: -10000px;
   width: 100%;
-  max-width: 300px;
-  height: 93px;
-  aspect-ratio: 300 / 93;
+  max-width: 2146px;
+  max-height: 733px;
+  aspect-ratio: 2146/733;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(0deg, #001030 0%, #001030 3%, rgba(0, 16, 48, 0) 15%, rgba(0, 16, 48, 0) 100%), url(images/timber-valley.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+#gameContainer {
+  overflow: hidden;
+}
+#overlay {
+  background: #001030;
+  padding: 20px !important;
+  width: 100vw;
+  height: 100vh;
+}
+#overlay > div {
+  z-index: 100;
+}
+#overlay p {
+  font-family: "VT323", serif !important;
+  font-size: 1rem !important;
 }
 @media screen and (min-width: 320px) {
   .char-grid {

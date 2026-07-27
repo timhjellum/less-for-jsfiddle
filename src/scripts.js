@@ -24,4 +24,6 @@ import './images/powder-pro-dude.jpg';
 import './images/half-pipe-dude.jpg';
 import './images/shred-queen-dude.jpg';
 
+import './images/timber-valley.png';
+
 console.clear();
